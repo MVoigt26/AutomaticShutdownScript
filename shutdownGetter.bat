@@ -1,0 +1,1 @@
+powershell "& ""C:\AutomaticShutdownScript\shutdownTimerStart.ps1"""
