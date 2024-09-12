@@ -1,1 +1,1 @@
-powershell "& ""C:\AutomaticShutdownScript\shutdownTimerStart.ps1"""
+PowerShell -NoProfile -ExecutionPolicy Bypass -Command "& ""%~dp0shutdownTimerStart.ps1"""
