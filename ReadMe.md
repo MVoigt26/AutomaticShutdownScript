@@ -2,10 +2,11 @@
 
 ## Contents
 
-This repo contains 4 files
+This repo contains 5 files
 - ReadMe.md
 - shutdownAbort.bat
 - shutdownGetter.bat
+- shutdownSnooze.bat
 - shutdownTimerStart.ps1
 
 ## Setup
