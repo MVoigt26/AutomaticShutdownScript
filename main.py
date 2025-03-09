@@ -21,7 +21,7 @@ def schedule_shutdown(config):
 
 	# Schedule shutdown
 	print(f"Scheduling shutdown in {delta_hour} hours and {delta_minute} minutes")
-	os.system(f"echo shutdown -s -t {seconds_to_shutdown}")
+	os.system(f"shutdown -s -t {seconds_to_shutdown}")
 	input()
 
 def setup():
@@ -53,12 +53,13 @@ def setup():
 	with open("shutdownScheduler.bat", "w") as f:
 		f.write(script)
 
-	print("Created 'shutdownScheduler.bat. Move this file into your startup folder to run on startup.", end="\n\n")
+	print("Created 'shutdownScheduler.bat")
+	print("Move this file to your startup folder now? (y/n)")
+	if input("> ").lower() == "y":
+		os.system(f"mv shutdownScheduler.bat \"%appdata%/Microsoft/Windows/Start Menu/Programs/Startup\"")
 
+	print()
 	print("Edit anytime by running setup again, or editing shutdown_config.json.")
-
-	
-
 
 
 def main():
