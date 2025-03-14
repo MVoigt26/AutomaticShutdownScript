@@ -1,2 +1,2 @@
 
-@Start "" "%CD%/bin/python.exe" main.py setup
+@Start powershell.exe %CD%/main.ps1 setup
