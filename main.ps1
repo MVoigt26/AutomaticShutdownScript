@@ -56,17 +56,17 @@ function Setup {
 
     $config | ConvertTo-Json | Out-File -FilePath "shutdown_config.json"
 
-    $dirPath = $PWD
-    $script = "@echo off`npowershell.exe $dirPath\main.ps1 $dirPath\shutdown_config.json"
+    $script = "@echo off`npowershell.exe $PWD\main.ps1 $PWD\shutdown_config.json"
     $script | Out-File -FilePath "shutdownScheduler.bat" -NoNewline -Encoding ascii
 
-    Write-Output "Created 'shutdownScheduler.bat"
+    Write-Output "Created 'shutdownScheduler.bat and 'shutdown_config.json`n"
     Write-Output "Move this file to your startup folder now? (y/n)"
     if ((Read-Host -Prompt " ").ToLower() -eq "y") {
         Move-Item -Path "shutdownScheduler.bat" -Destination "$env:APPDATA\Microsoft\Windows\Start Menu\Programs\Startup"
     }
 
     Write-Output "`nEdit anytime by running setup again, or editing shutdown_config.json."
+    Read-Host -Prompt "Press Enter to exit"
 }
 
 function Main {
